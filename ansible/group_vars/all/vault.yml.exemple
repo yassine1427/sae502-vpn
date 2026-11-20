@@ -1,0 +1,5 @@
+---
+# Modèle du fichier vault.yml (le vrai est chiffré avec ansible-vault)
+# ansible-vault create group_vars/all/vault.yml
+vault_wg_cle_privee_serveur: "A_REMPLIR"
+vault_mot_de_passe_sudo: "A_REMPLIR"

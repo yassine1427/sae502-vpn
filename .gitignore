@@ -1,0 +1,27 @@
+# Fichiers de connexion et guides générés pour les salariés
+livrables/
+
+# Clés WireGuard et certificats
+*.key
+*.pem
+*.psk
+*.conf.secret
+clients/
+wg0.conf
+
+# Mot de passe Vault (jamais sur GitHub)
+.vault_pass
+*.vault_pass
+
+# Python / venv Ansible
+.venv/
+venv/
+__pycache__/
+*.retry
+
+# Doc Sphinx générée
+docs/build/
+
+# Divers
+.DS_Store
+*.swp

@@ -1,0 +1,6 @@
+---
+# Tests de validation T1 à T10 du cahier des charges
+- name: Tests de validation
+  hosts: vpn
+  become: true
+  tasks: []

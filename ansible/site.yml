@@ -1,0 +1,11 @@
+---
+- name: Déploiement du VPN des télétravailleurs
+  hosts: vpn
+  become: true
+  roles:
+    - docker
+    - securite
+    - certificats
+    - wireguard
+    - services
+    - clients

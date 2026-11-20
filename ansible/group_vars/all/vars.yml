@@ -1,0 +1,17 @@
+---
+domaine: entreprise.local
+
+reseau_interne: 172.20.0.0/24
+reseau_externe: 172.30.0.0/24
+reseau_tunnel: 10.8.0.0/24
+
+wg_port: 51820
+wg_ip_serveur: 10.8.0.1
+
+ip_vpn_externe: 172.30.0.2
+ip_vpn_interne: 172.20.0.2
+ip_intranet: 172.20.0.3
+ip_dns: 172.20.0.4
+
+# adresse du poste de gestion, seule autorisée en SSH
+ip_poste_gestion: 192.168.56.1

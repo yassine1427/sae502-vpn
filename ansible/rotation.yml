@@ -1,0 +1,6 @@
+---
+# Rotation des clés : -e salarie=nom pour un seul salarié, sans paramètre pour tous
+- name: Rotation des clés WireGuard
+  hosts: vpn
+  become: true
+  tasks: []

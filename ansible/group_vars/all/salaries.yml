@@ -1,0 +1,8 @@
+---
+# Liste des salariés autorisés à se connecter au VPN.
+# Retirer une ligne puis relancer site.yml coupe l'accès.
+salaries:
+  - nom: salarie1
+    ip_tunnel: 10.8.0.11
+  - nom: salarie2
+    ip_tunnel: 10.8.0.12

@@ -1,0 +1,61 @@
+services:
+  vpn:
+    build: ./vpn
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      - net.ipv4.ip_forward=1
+    ports:
+      - "51820:51820/udp"
+    networks:
+      net_externe:
+        ipv4_address: 172.30.0.2
+      net_interne:
+        ipv4_address: 172.20.0.2
+    restart: unless-stopped
+
+  intranet:
+    build: ./intranet
+    container_name: intranet
+    networks:
+      net_interne:
+        ipv4_address: 172.20.0.3
+    restart: unless-stopped
+
+  dns:
+    build: ./dns
+    container_name: dns
+    networks:
+      net_interne:
+        ipv4_address: 172.20.0.4
+    restart: unless-stopped
+
+  salarie1:
+    build: ./salarie
+    container_name: salarie1
+    cap_add:
+      - NET_ADMIN
+    networks:
+      net_externe:
+        ipv4_address: 172.30.0.11
+
+  salarie2:
+    build: ./salarie
+    container_name: salarie2
+    cap_add:
+      - NET_ADMIN
+    networks:
+      net_externe:
+        ipv4_address: 172.30.0.12
+
+networks:
+  net_interne:
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+  net_externe:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
